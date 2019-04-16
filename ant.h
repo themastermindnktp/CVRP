@@ -36,13 +36,10 @@ struct ant
         {
             p[i] = pow(tau[remain[i]], ALPHA) / pow(distance[current][remain[i]], BETA);
             sum += p[i];
-            //cerr << p[i] << " " << sum << "\n";
 
         }
 
         double prob = ((double) rand() * rand() / RAND_MAX / RAND_MAX);
-
-        //cerr << prob << "\n";
 
         double tmp;
 

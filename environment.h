@@ -141,17 +141,18 @@ struct environment
 
     bool tsp2Opt()
     {
+        bool opt = false;
         for(int i = 0; i < n; ++i)
             for(int j = i + 1; j < n; ++j)
             {
                 int tmp = iBestLength;
                 tspSwap(i, j);
-                if (iBestLength < tmp) return true;
+                if (iBestLength < tmp) opt = true;
                 if (iBestLength > tmp) tspSwap(i, j);
 
             }
 
-        return false;
+        return opt;
 
     }
 
@@ -222,7 +223,7 @@ struct environment
 
     void cvrpLocalSearch()
     {
-        while (cvrp2Opt()) cerr << tLength << "\n";
+        while (cvrp2Opt()) ;
 
     }
 
@@ -330,8 +331,6 @@ struct environment
                 }
 
             }
-
-            cerr << iBestLength << "\n";
 
             change = dynamicProgramming(iBestPath);
 

@@ -202,7 +202,7 @@ void readData(cvrpProb& prob)
         {
             if (!(readType && readDimension && readEdgeWeightType && readCapacity &&
                   readNodeCoordSection && readDemand && readDepotSection))
-                    interrupt("Missing needed information");
+                    interrupt("End of file: Missing needed information");
             break;
         }
         else
